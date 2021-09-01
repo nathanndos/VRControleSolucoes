@@ -19,7 +19,8 @@ namespace VRControleSolucao.UI
             InitializeComponent();
             reloadDataSet();
             dataGridView1.Columns[0].Width = 80;
-            dataGridView1.Columns[1].Width = 380;
+            
+            dataGridView1.Columns[1].Width = 360;
         }
 
         private void button3_Click(object sender, EventArgs e)
