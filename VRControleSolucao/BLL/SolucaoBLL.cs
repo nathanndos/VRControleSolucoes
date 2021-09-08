@@ -24,5 +24,17 @@ namespace BLL
         {
             return SolucaoDAL.getData();
         }
+        public static DataTable consultaNome(string name, bool tipoNome)
+        {
+            if (tipoNome == true)
+            {
+                return SolucaoDAL.consultNome(name);
+            }
+            return SolucaoDAL.consultCodigo(int.Parse(name));
+        }
+        public static Solucao get(int codigo)
+        {
+            return SolucaoDAL.get(codigo);
+        }
     }
 }

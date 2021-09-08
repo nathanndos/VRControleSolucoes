@@ -30,9 +30,9 @@ namespace VRControleSolucao.UI
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.tbPesquisa = new System.Windows.Forms.TextBox();
+            this.rbNome = new System.Windows.Forms.RadioButton();
+            this.rbCodigo = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,34 +51,35 @@ namespace VRControleSolucao.UI
             this.label1.TabIndex = 0;
             this.label1.Text = "Pesquisar";
             // 
-            // textBox1
+            // tbPesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(324, 23);
-            this.textBox1.TabIndex = 1;
+            this.tbPesquisa.Location = new System.Drawing.Point(187, 52);
+            this.tbPesquisa.Name = "tbPesquisa";
+            this.tbPesquisa.Size = new System.Drawing.Size(222, 23);
+            this.tbPesquisa.TabIndex = 1;
             // 
-            // radioButton1
+            // rbNome
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(187, 92);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 19);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nome";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbNome.AutoSize = true;
+            this.rbNome.Checked = true;
+            this.rbNome.Location = new System.Drawing.Point(187, 92);
+            this.rbNome.Name = "rbNome";
+            this.rbNome.Size = new System.Drawing.Size(58, 19);
+            this.rbNome.TabIndex = 2;
+            this.rbNome.TabStop = true;
+            this.rbNome.Text = "Nome";
+            this.rbNome.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbCodigo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(291, 92);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(64, 19);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Código";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Location = new System.Drawing.Point(291, 92);
+            this.rbCodigo.Name = "rbCodigo";
+            this.rbCodigo.Size = new System.Drawing.Size(64, 19);
+            this.rbCodigo.TabIndex = 3;
+            this.rbCodigo.TabStop = true;
+            this.rbCodigo.Text = "Código";
+            this.rbCodigo.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -91,25 +92,27 @@ namespace VRControleSolucao.UI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(536, 51);
+            this.button1.Location = new System.Drawing.Point(436, 47);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 6;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(108, 382);
+            this.button2.Location = new System.Drawing.Point(536, 47);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 38);
+            this.button2.Size = new System.Drawing.Size(75, 30);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Selecionar";
+            this.button2.Text = "Visualizar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(482, 382);
+            this.button3.Location = new System.Drawing.Point(382, 382);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 38);
             this.button3.TabIndex = 8;
@@ -124,12 +127,14 @@ namespace VRControleSolucao.UI
             this.dataGridView1.Location = new System.Drawing.Point(108, 188);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(503, 160);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(291, 382);
+            this.button4.Location = new System.Drawing.Point(187, 382);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 38);
             this.button4.TabIndex = 21;
@@ -148,13 +153,13 @@ namespace VRControleSolucao.UI
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.rbCodigo);
+            this.Controls.Add(this.rbNome);
+            this.Controls.Add(this.tbPesquisa);
             this.Controls.Add(this.label1);
             this.Name = "PrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "VRControleSoluções";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,9 +169,9 @@ namespace VRControleSolucao.UI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox tbPesquisa;
+        private System.Windows.Forms.RadioButton rbNome;
+        private System.Windows.Forms.RadioButton rbCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

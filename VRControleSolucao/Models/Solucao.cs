@@ -18,5 +18,9 @@ namespace Entity
             IdSolucoes++;
             _idSolucao = IdSolucoes;
         }
+        public Solucao(int codigo)
+        {
+            _idSolucao = codigo;
+        }
     }
 }

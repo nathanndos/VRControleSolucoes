@@ -39,7 +39,8 @@ namespace DAL
                     conec.Close();
                 }
             }
-        }public static bool findSolucao(int codigo)
+        }
+        public static bool findSolucao(int codigo)
         {
             string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Integrated Security=True";
             bool testeFind = false;
@@ -115,7 +116,7 @@ namespace DAL
             {
                 try
                 {
-                    string sqlQuery = "SELECT Id_problema, Nome FROM tbl_problemas";
+                    const string sqlQuery = "SELECT Id_problema, Nome FROM tbl_problemas";
                     conec.Open();
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, conec))
                     //Representa um conjunto de comandos SQL e uma conexão de banco de dados
@@ -135,6 +136,108 @@ namespace DAL
                     conec.Close();
                 }
             }
+        }
+        public static DataTable consultNome(string valor)
+        {
+            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Integrated Security=True";
+            using (SqlConnection conec = new SqlConnection(textConnection))
+            {
+                try
+
+                {
+                    string sqlQuery = $"SELECT Id_problema, Nome FROM tbl_problemas WHERE Nome LIKE '%{valor}%'";
+
+                    conec.Open();
+                    
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, conec))
+                    //Representa um conjunto de comandos SQL e uma conexão de banco de dados
+                    //serve pra preencher dataset
+                    {
+                        using (DataTable dt = new DataTable())
+                        //representa uma tabela de dados
+                        {
+                            da.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+                catch { throw; }
+                finally
+                {
+                    conec.Close();
+                }
+            }
+        }
+        public static DataTable consultCodigo(int valor)
+        {
+            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Integrated Security=True";
+            using (SqlConnection conec = new SqlConnection(textConnection))
+            {
+                try
+
+                {
+                    string sqlQuery = $"SELECT Id_problema, Nome FROM tbl_problemas WHERE Id_problema = {valor}";
+
+                    conec.Open();
+
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, conec))
+                    //Representa um conjunto de comandos SQL e uma conexão de banco de dados
+                    //serve pra preencher dataset
+                    {
+                        using (DataTable dt = new DataTable())
+                        //representa uma tabela de dados
+                        {
+                            da.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+                catch { throw; }
+                finally
+                {
+                    conec.Close();
+                }
+            }
+        }
+
+        public static Solucao get(int codigo)
+        {
+            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Integrated Security=True";
+
+            Solucao sol = new Solucao(codigo);
+            SqlDataReader dr = null;
+
+            using (SqlConnection conec = new SqlConnection(textConnection))
+            {
+                try
+                {
+                    const string sqlQuery = "SELECT Id_problema, Nome, Descricao FROM tbl_problemas WHERE Id_problema = @Codigo";
+                    SqlCommand cmd = new SqlCommand(sqlQuery,conec);
+
+                    cmd.Parameters.AddWithValue("@Codigo", codigo);
+                    conec.Open();
+
+                    dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                    while (dr.Read())
+                    {
+                        sol.Nome = dr[1].ToString();
+                        sol.Descricao = dr[2].ToString();
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    conec.Close();
+                }
+            }
+
+            return sol;
         }
     }
 }
