@@ -19,8 +19,9 @@ namespace VRControleSolucao.UI
         {
             InitializeComponent();
             reloadDataSet();
-            dataGridView1.Columns[0].Width = 80;           
-            dataGridView1.Columns[1].Width = 360;
+            dataGridView1.Columns[0].Width = 80;    
+            
+            dataGridView1.Columns[1].Width = 420;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -59,6 +60,11 @@ namespace VRControleSolucao.UI
                 DescricaoForm descricaoForm = new DescricaoForm(sl._idSolucao,sl.Nome, sl.Descricao);
                 descricaoForm.Show();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

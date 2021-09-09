@@ -22,5 +22,11 @@ namespace Entity
         {
             _idSolucao = codigo;
         }
+        public Solucao(int codigo, string nome, string descricao)
+        {
+            _idSolucao = codigo;
+            Nome = nome;
+            Descricao = descricao;
+        }
     }
 }

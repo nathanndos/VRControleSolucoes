@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace VRControleSolucao.UI
 {
@@ -33,14 +34,26 @@ namespace VRControleSolucao.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtBoxNome.Enabled = true;
-            txtBoxDescricao.Enabled = true;
-            btnSalvar.Enabled = true;
+            blockInput();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            SolucaoBLL.update(int.Parse(tbCodigo.Text),txtBoxNome.Text,txtBoxDescricao.Text);
+            MessageBox.Show("Salvo com sucesso!");
+            blockInput();
+
+        }
+        public void blockInput()
+        {
+            txtBoxNome.Enabled = !txtBoxNome.Enabled;
+            txtBoxDescricao.Enabled = !txtBoxDescricao.Enabled;
+            btnSalvar.Enabled = !btnSalvar.Enabled;
         }
     }
 }

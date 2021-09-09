@@ -16,6 +16,11 @@ namespace BLL
         {
                 SolucaoDAL.add(solucao);
         }
+        public static void update(int codigo, string nome, string descricao)
+        {
+            Solucao solucao = new Solucao(codigo, nome, descricao);
+            SolucaoDAL.update(solucao);
+        }
         public static void getLast()
         {
             Solucao.IdSolucoes = SolucaoDAL.getLast();

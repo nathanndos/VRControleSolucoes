@@ -80,6 +80,28 @@ namespace DAL
             }
             return testeFind;
         }
+        public static void update(Solucao solucao) {
+            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Integrated Security=True";
+
+            using (SqlConnection conec = new SqlConnection(textConnection))
+            {
+                try
+                {
+                    const string sqlQuery = "UPDATE tbl_problemas SET Nome=@Nome, Descricao=@Descricao WHERE Id_problema=@Codigo";
+
+                    SqlCommand cmd = new SqlCommand(sqlQuery, conec);
+                    cmd.Parameters.AddWithValue("@Nome",solucao.Nome);
+                    cmd.Parameters.AddWithValue("@Descricao", solucao.Descricao);
+                    cmd.Parameters.AddWithValue("@Codigo", solucao._idSolucao);
+
+                    conec.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch { throw; }
+                finally { conec.Close(); }
+                
+            }
+        }
         public static int getLast()
         {
             string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Integrated Security=True";
@@ -201,7 +223,6 @@ namespace DAL
                 }
             }
         }
-
         public static Solucao get(int codigo)
         {
             string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Integrated Security=True";
