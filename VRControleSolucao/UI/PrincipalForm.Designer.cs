@@ -41,6 +41,8 @@ namespace VRControleSolucao.UI
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbErro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +76,7 @@ namespace VRControleSolucao.UI
             this.rbNome.TabStop = true;
             this.rbNome.Text = "Nome";
             this.rbNome.UseVisualStyleBackColor = true;
+            this.rbNome.CheckedChanged += new System.EventHandler(this.rbNome_CheckedChanged);
             // 
             // rbCodigo
             // 
@@ -86,6 +89,7 @@ namespace VRControleSolucao.UI
             this.rbCodigo.TabStop = true;
             this.rbCodigo.Text = "Código";
             this.rbCodigo.UseVisualStyleBackColor = true;
+            this.rbCodigo.CheckedChanged += new System.EventHandler(this.rbCodigo_CheckedChanged);
             // 
             // label2
             // 
@@ -110,6 +114,7 @@ namespace VRControleSolucao.UI
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(540, 76);
             this.button2.Name = "button2";
@@ -155,7 +160,7 @@ namespace VRControleSolucao.UI
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.Location = new System.Drawing.Point(500, 406);
             this.button5.Name = "button5";
@@ -169,17 +174,39 @@ namespace VRControleSolucao.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(254, 24);
+            this.label3.Location = new System.Drawing.Point(262, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 25);
             this.label3.TabIndex = 21;
             this.label3.Text = "Menu de busca";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(535, 471);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 12);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Densenvolvido por: Nathan Silva";
+            // 
+            // lbErro
+            // 
+            this.lbErro.AutoSize = true;
+            this.lbErro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbErro.ForeColor = System.Drawing.Color.Red;
+            this.lbErro.Location = new System.Drawing.Point(12, 464);
+            this.lbErro.Name = "lbErro";
+            this.lbErro.Size = new System.Drawing.Size(0, 19);
+            this.lbErro.TabIndex = 23;
+            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 505);
+            this.ClientSize = new System.Drawing.Size(694, 492);
+            this.Controls.Add(this.lbErro);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -215,5 +242,7 @@ namespace VRControleSolucao.UI
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbErro;
     }
 }

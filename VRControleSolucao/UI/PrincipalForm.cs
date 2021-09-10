@@ -48,23 +48,72 @@ namespace VRControleSolucao.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                lbErro.Text = "";
+                if (tbPesquisa.Text == "")
+                {
+                    lbErro.Text = "Campo pesquisa está vazio";
 
-                dataGridView1.DataSource = SolucaoBLL.consultaNome(tbPesquisa.Text, rbNome.Checked);
+                }else
+                {
+                    dataGridView1.DataSource = SolucaoBLL.consultaNome(tbPesquisa.Text, rbNome.Checked);
+                }
+            }
+            catch
+            {
+                lbErro.Text = "Digite apenas valores númericos positivos na pesquisa por código";
+                tbPesquisa.Text = "";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (rbCodigo.Checked == true)
+            try
             {
-                Solucao sl = SolucaoBLL.get(int.Parse(tbPesquisa.Text));
-                DescricaoForm descricaoForm = new DescricaoForm(sl._idSolucao,sl.Nome, sl.Descricao);
-                descricaoForm.Show();
+                if (rbCodigo.Checked == true)
+                {
+                    if (tbPesquisa.Text == "")
+                    {
+                        lbErro.Text = "Campo pesquisa está vazio";
+
+                    }
+                    else if (int.Parse(tbPesquisa.Text)>0)
+                    {
+                        lbErro.Text = "";
+                        Solucao sl = SolucaoBLL.get(int.Parse(tbPesquisa.Text));
+                        DescricaoForm descricaoForm = new DescricaoForm(sl._idSolucao, sl.Nome, sl.Descricao);
+                        descricaoForm.Show();
+                    }
+                    else
+                    {
+                        lbErro.Text = "Digite apenas valores positivos na pesquisa por código";
+                        tbPesquisa.Text = "";
+                    }
+                    
+                }
             }
+            catch
+            {
+                lbErro.Text = "Digite apenas valores númericos na pesquisa por código";
+                tbPesquisa.Text = "";
+            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void rbNome_CheckedChanged(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+        }
+
+        private void rbCodigo_CheckedChanged(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
         }
     }
 }

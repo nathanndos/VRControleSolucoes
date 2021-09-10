@@ -36,6 +36,8 @@ namespace UI
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.lbErro = new System.Windows.Forms.Label();
+            this.btnContinuar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +71,7 @@ namespace UI
             // bntLimpar
             // 
             this.bntLimpar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bntLimpar.Location = new System.Drawing.Point(114, 413);
+            this.bntLimpar.Location = new System.Drawing.Point(62, 413);
             this.bntLimpar.Name = "bntLimpar";
             this.bntLimpar.Size = new System.Drawing.Size(129, 38);
             this.bntLimpar.TabIndex = 3;
@@ -80,11 +82,11 @@ namespace UI
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastrar.Location = new System.Drawing.Point(435, 413);
+            this.btnCadastrar.Location = new System.Drawing.Point(292, 413);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(129, 38);
             this.btnCadastrar.TabIndex = 4;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "Salvar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
@@ -92,7 +94,7 @@ namespace UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(155, 19);
+            this.label3.Location = new System.Drawing.Point(177, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(328, 25);
             this.label3.TabIndex = 7;
@@ -108,11 +110,33 @@ namespace UI
             this.txtDescricao.TabIndex = 2;
             this.txtDescricao.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // lbErro
+            // 
+            this.lbErro.AutoSize = true;
+            this.lbErro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbErro.ForeColor = System.Drawing.Color.Red;
+            this.lbErro.Location = new System.Drawing.Point(12, 469);
+            this.lbErro.Name = "lbErro";
+            this.lbErro.Size = new System.Drawing.Size(0, 19);
+            this.lbErro.TabIndex = 8;
+            // 
+            // btnContinuar
+            // 
+            this.btnContinuar.Location = new System.Drawing.Point(499, 413);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(129, 38);
+            this.btnContinuar.TabIndex = 9;
+            this.btnContinuar.Text = "Salvar e continuar";
+            this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
+            // 
             // CadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 505);
+            this.ClientSize = new System.Drawing.Size(694, 497);
+            this.Controls.Add(this.btnContinuar);
+            this.Controls.Add(this.lbErro);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCadastrar);
@@ -137,6 +161,8 @@ namespace UI
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.Label lbErro;
+        private System.Windows.Forms.Button btnContinuar;
     }
 }
 

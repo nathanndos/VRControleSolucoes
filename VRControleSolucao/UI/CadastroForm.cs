@@ -37,16 +37,23 @@ namespace UI
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            SolucaoBLL.getLast();
-            Solucao solucao = new Solucao();
-            solucao.Nome = txtNome.Text;
-            solucao.Descricao = txtDescricao.Text;
-            SolucaoBLL.save(solucao);
+            try
+            {
+                if(txtNome.Text == "")
+                {
+                    lbErro.Text = "Campo *Nome* é obrigatório para cadastro";
+                }
+                else
+                {
+                    criarCadastro();
+                    Close();
+                }
+            }
+            catch
+            {
+                lbErro.Text = "Ocorreu um erro. Digite novamente";
 
-            MessageBox.Show("Cadastrado com sucesso");
-            
-            clearText();
-
+            }           
 
         }
         private void clearText()
@@ -54,6 +61,36 @@ namespace UI
 
             txtNome.Text = "";
             txtDescricao.Text = "";
+        }
+        private void criarCadastro()
+        {
+            SolucaoBLL.getLast();
+            Solucao solucao = new Solucao();
+            solucao.Nome = txtNome.Text;
+            solucao.Descricao = txtDescricao.Text;
+            SolucaoBLL.save(solucao);
+        }
+
+        private void btnContinuar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtNome.Text == "")
+                {
+                    lbErro.Text = "Campo *Nome* é obrigatório para cadastro";
+                }
+                else
+                {
+                    criarCadastro();
+                    clearText();
+                    lbErro.Text = "Cadastrado com sucesso!";
+                }
+            }
+            catch
+            {
+                lbErro.Text = "Ocorreu um erro. Digite novamente";
+
+            }
         }
     }
 }

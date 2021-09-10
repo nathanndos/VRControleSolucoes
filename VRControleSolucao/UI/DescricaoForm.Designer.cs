@@ -38,13 +38,15 @@ namespace VRControleSolucao.UI
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbErro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(66, 47);
+            this.label1.Location = new System.Drawing.Point(66, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 21);
             this.label1.TabIndex = 0;
@@ -55,10 +57,10 @@ namespace VRControleSolucao.UI
             this.txtBoxDescricao.AcceptsTab = true;
             this.txtBoxDescricao.Enabled = false;
             this.txtBoxDescricao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBoxDescricao.Location = new System.Drawing.Point(66, 134);
+            this.txtBoxDescricao.Location = new System.Drawing.Point(66, 170);
             this.txtBoxDescricao.Multiline = true;
             this.txtBoxDescricao.Name = "txtBoxDescricao";
-            this.txtBoxDescricao.Size = new System.Drawing.Size(590, 292);
+            this.txtBoxDescricao.Size = new System.Drawing.Size(590, 256);
             this.txtBoxDescricao.TabIndex = 1;
             this.txtBoxDescricao.TextChanged += new System.EventHandler(this.txtBoxDescricao_TextChanged);
             // 
@@ -66,7 +68,7 @@ namespace VRControleSolucao.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(66, 100);
+            this.label2.Location = new System.Drawing.Point(66, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 21);
             this.label2.TabIndex = 2;
@@ -76,7 +78,7 @@ namespace VRControleSolucao.UI
             // 
             this.txtBoxNome.Enabled = false;
             this.txtBoxNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBoxNome.Location = new System.Drawing.Point(125, 44);
+            this.txtBoxNome.Location = new System.Drawing.Point(125, 78);
             this.txtBoxNome.Name = "txtBoxNome";
             this.txtBoxNome.Size = new System.Drawing.Size(382, 29);
             this.txtBoxNome.TabIndex = 3;
@@ -96,7 +98,7 @@ namespace VRControleSolucao.UI
             // 
             // btnFechar
             // 
-            this.btnFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFechar.Location = new System.Drawing.Point(525, 451);
             this.btnFechar.Name = "btnFechar";
@@ -121,7 +123,7 @@ namespace VRControleSolucao.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(537, 47);
+            this.label3.Location = new System.Drawing.Point(537, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 21);
             this.label3.TabIndex = 7;
@@ -131,17 +133,39 @@ namespace VRControleSolucao.UI
             // 
             this.tbCodigo.Enabled = false;
             this.tbCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbCodigo.Location = new System.Drawing.Point(603, 44);
+            this.tbCodigo.Location = new System.Drawing.Point(603, 78);
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(53, 29);
             this.tbCodigo.TabIndex = 8;
             this.tbCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(242, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(213, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Visualização da solução";
+            // 
+            // lbErro
+            // 
+            this.lbErro.AutoSize = true;
+            this.lbErro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbErro.ForeColor = System.Drawing.Color.Red;
+            this.lbErro.Location = new System.Drawing.Point(13, 505);
+            this.lbErro.Name = "lbErro";
+            this.lbErro.Size = new System.Drawing.Size(0, 19);
+            this.lbErro.TabIndex = 10;
+            // 
             // DescricaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 501);
+            this.ClientSize = new System.Drawing.Size(725, 532);
+            this.Controls.Add(this.lbErro);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.tbCodigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -170,5 +194,7 @@ namespace VRControleSolucao.UI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbCodigo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbErro;
     }
 }

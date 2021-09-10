@@ -44,9 +44,28 @@ namespace VRControleSolucao.UI
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            SolucaoBLL.update(int.Parse(tbCodigo.Text),txtBoxNome.Text,txtBoxDescricao.Text);
-            MessageBox.Show("Salvo com sucesso!");
-            blockInput();
+            try
+            {
+                if (txtBoxNome.Text =="")
+                {
+                    lbErro.Text = "Não é permitido alterar *nome* para vazio";
+                }
+                else
+                {
+                    lbErro.Text = "Alterado com sucesso!";
+                    SolucaoBLL.update(int.Parse(tbCodigo.Text),txtBoxNome.Text,txtBoxDescricao.Text);
+                    blockInput();
+                }
+                
+            }
+            catch
+            {
+                lbErro.Text = "Ocorreu um erro. Tente novamente";
+
+            }
+            finally {  }
+
+            
 
         }
         public void blockInput()
@@ -54,6 +73,16 @@ namespace VRControleSolucao.UI
             txtBoxNome.Enabled = !txtBoxNome.Enabled;
             txtBoxDescricao.Enabled = !txtBoxDescricao.Enabled;
             btnSalvar.Enabled = !btnSalvar.Enabled;
+
+            if (btnSalvar.Enabled == true)
+            {
+                button1.Text = "Bloquear edição";
+            }
+            else
+            {
+                button1.Text = "Habilitar edição";
+
+            }
         }
     }
 }
