@@ -4,15 +4,23 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>lampada.ico</ApplicationIcon>
+    <Authors>Nathan de Oliveira Silva</Authors>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>C:\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="NovaPasta\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BaseDeDados\" />
+    <ProjectReference Include="..\VRControleSolucao\VRControleSolucao.csproj" />
   </ItemGroup>
 
 </Project>
