@@ -19,9 +19,10 @@ namespace VRControleSolucao.UI
         {
             InitializeComponent();
             reloadDataSet();
-            dataGridView1.Columns[0].Width = 80;    
-            
-            dataGridView1.Columns[1].Width = 420;
+            dataGridView1.Columns[0].Width = 60;
+            dataGridView1.Columns[0].HeaderText = "Código";
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].Width = 440;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -55,14 +56,15 @@ namespace VRControleSolucao.UI
                 {
                     lbErro.Text = "Campo pesquisa está vazio";
 
-                }else
+                }            
+                else
                 {
                     dataGridView1.DataSource = SolucaoBLL.consultaNome(tbPesquisa.Text, rbNome.Checked);
                 }
             }
-            catch
+           catch
             {
-                lbErro.Text = "Digite apenas valores númericos positivos na pesquisa por código";
+                lbErro.Text = "Digite apenas valores válidos na pesquisa por código";
                 tbPesquisa.Text = "";
             }
         }

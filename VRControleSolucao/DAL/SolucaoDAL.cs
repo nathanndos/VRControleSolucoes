@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace DAL
 {
@@ -13,7 +14,7 @@ namespace DAL
     {
         public static void add(Solucao solucao)
         {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
 
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -42,7 +43,7 @@ namespace DAL
         }
         public static bool findSolucao(int codigo)
         {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
             bool testeFind = false;
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -81,7 +82,7 @@ namespace DAL
             return testeFind;
         }
         public static void update(Solucao solucao) {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
 
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -104,7 +105,7 @@ namespace DAL
         }
         public static int getLast()
         {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
             int last;
 
             using (SqlConnection conec = new SqlConnection(textConnection))
@@ -132,7 +133,7 @@ namespace DAL
         }
         public static DataTable getData()
         {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
    
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -161,7 +162,7 @@ namespace DAL
         }
         public static DataTable consultNome(string valor)
         {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
                 try
@@ -193,7 +194,7 @@ namespace DAL
         }
         public static DataTable consultCodigo(int valor)
         {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
                 try
@@ -225,7 +226,7 @@ namespace DAL
         }
         public static Solucao get(int codigo)
         {
-            string textConnection = @"Data Source=DESKTOP-DFR8CKK\SQLEXPRESS;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=root;Password=321";
+            string textConnection = Common.get();
 
             Solucao sol = new Solucao(codigo);
             SqlDataReader dr = null;
