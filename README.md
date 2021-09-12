@@ -12,8 +12,18 @@ Para colocar a aplicação para produção é simples, baixa seguir os passos ab
 	6) Na aba "Configuração do Mecanismo de Banco de dados", marque a opção "Modo misto" e coloque a senha como "senha".
 	7) Com todos os passos seguidos corretamente é só esperar a mensagem de sucesso e finalizar.
 
-# Baixando a aplicação
+# Baixando e preparando a aplicação
 
+Baixe este projeto e descompacte normalmente. Dentro da nova pasta, há outro arquivo compactado chamado "VRControleSolucao". Descompacte o novo arquivo na pasta raiz do computador.
+
+Obs.: Garanta que o caminho da pasta descompactada seja "C:\VRControleSolucao", caso contrário, não irá funcionar
+1) Dentro da pasta, há dois arquivos de banco de dados, são eles: "vrsolucoes" e "vrsolucoes_log". As ações abaixo devem ser realizadas em ambos:
+	1) Clique com o botão direito, depois propriedades
+	2) Clique em segurança, depois editar
+	3) Na nova janela aberta, clique em adicionar, digite "todos", dê "OK" e selecione "todos" novamente. 
+	4) Selecione "todos" na divisão de "Nome de grupo ou de usuário" e dê permissão de "controle total" na divisão "Permissão para...."
+2) Execute o "LigarBase" e clique em "Iniciar".
+3) Caso, o feedback seja positivo, não será mais necessário utilizar o "LigarBase novamente. Sendo assim é só executar o "VRControleSolucao" e começar a usar normalmente
 
 
 
