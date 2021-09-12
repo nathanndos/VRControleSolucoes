@@ -2,8 +2,10 @@
 
 Para colocar a aplicação para produção é simples, baixa seguir os passos abaixo.
 
-1) Baixar o SQL EXPRESS 2014 32bit ou 64bit. Obs.: versões anteriores ou posteriores não são compatíveis
-2) Após baixado, abra o executável
+1) Acesse o link https://www.microsoft.com/pt-br/download/details.aspx?id=42299
+2) Marque a opção Express 64BIT\SQLEXPR_x64_PTB.exe ou Express 32BIT\SQLEXPR_x86_PTB.exe, para baixar o SQL EXPRESS 2014 32bit ou 64bit. 
+	Obs.: versões anteriores ou posteriores não são compatíveis
+4) Após baixado, abra o executável
 	1) Clique em "Nova instalação autônoma do SQL SERVER...."
 	2) Aceite os termos da licença. Obs.: Não é necessário marcar a segunda opção
 	3) Não marque a opção "Usar o Microsoft Update para procurar atualizações"
