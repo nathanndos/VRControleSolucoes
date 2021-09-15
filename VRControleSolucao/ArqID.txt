@@ -1,1 +1,2 @@
 Data Source=localhost\SQL2014;Initial Catalog=vrsolucoes;Persist Security Info=True;User ID=sa;Password=senha
+Server=localhost\SQL2014;User ID=sa;Password=senha

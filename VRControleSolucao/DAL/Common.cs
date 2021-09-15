@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,17 @@ namespace DAL
 {
     public class Common
     {   
-        public static string get()
+        public static List<string> get()
         {
             StreamReader sr = new StreamReader(@"ArqID.txt");
-            return sr.ReadLine().ToString();
+            string texto = "";
+            List<string> srList = new List<string>();
+
+            while ((texto = sr.ReadLine())!=null)
+            {
+                srList.Add(texto);
+            }
+            return srList;
         }
     }
 }

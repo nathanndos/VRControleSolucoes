@@ -34,6 +34,10 @@ namespace UI
         {
 
         }
+        private void testLength()
+        {
+
+        }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -45,8 +49,16 @@ namespace UI
                 }
                 else
                 {
-                    criarCadastro();
-                    Close();
+                    if (txtDescricao.Text.Length >1500)
+                    {
+                        lbErro.Text = "Máximo de caracteres permitido: 1500";
+                    }
+                    else
+                    {
+                        criarCadastro();
+                        Close();
+                    }
+                   
                 }
             }
             catch

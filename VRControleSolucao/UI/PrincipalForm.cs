@@ -18,6 +18,7 @@ namespace VRControleSolucao.UI
         public PrincipalForm()
         {
             InitializeComponent();
+            lbErro.Text = "";
             reloadDataSet();
             dataGridView1.Columns[0].Width = 60;
             dataGridView1.Columns[0].HeaderText = "Código";
@@ -44,9 +45,8 @@ namespace VRControleSolucao.UI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            tbPesquisa.Focus();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -54,7 +54,7 @@ namespace VRControleSolucao.UI
                 lbErro.Text = "";
                 if (tbPesquisa.Text == "")
                 {
-                    lbErro.Text = "Campo pesquisa está vazio";
+                    reloadDataSet();
 
                 }            
                 else
@@ -77,7 +77,7 @@ namespace VRControleSolucao.UI
                 {
                     if (tbPesquisa.Text == "")
                     {
-                        lbErro.Text = "Campo pesquisa está vazio";
+                        reloadDataSet();
 
                     }
                     else if (int.Parse(tbPesquisa.Text)>0)
@@ -111,11 +111,63 @@ namespace VRControleSolucao.UI
         private void rbNome_CheckedChanged(object sender, EventArgs e)
         {
             button2.Enabled = false;
+            tbPesquisa.Focus();
         }
 
         private void rbCodigo_CheckedChanged(object sender, EventArgs e)
         {
             button2.Enabled = true;
+
+
+            ActiveControl = tbPesquisa;
+        }
+
+        private void tbPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPesquisa_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tbPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+
+            if (e.KeyValue ==(char)Keys.Enter)
+            {
+                e.Handled = true; //remove o som do bip da pesquisa
+                e.SuppressKeyPress = true;//
+                if (rbNome.Checked==true)
+                {
+                    button1_Click(sender, e);
+                }
+                else
+                {
+                    button2_Click(sender, e);
+                }
+            }
+            else if (e.KeyValue == (char)Keys.F5)
+            {
+                reloadDataSet();
+                tbPesquisa.Text = "";
+            }
+            else if (e.KeyValue == (char)Keys.F1)
+            {
+                rbNome.Checked = true;
+            }
+            else if (e.KeyValue == (char)Keys.F2)
+            {
+                tbPesquisa.Text = "";
+                rbCodigo.Checked = true;
+            }
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbPesquisa.Focus();
         }
     }
 }

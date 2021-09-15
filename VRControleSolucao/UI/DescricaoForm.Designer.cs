@@ -55,13 +55,14 @@ namespace VRControleSolucao.UI
             // txtBoxDescricao
             // 
             this.txtBoxDescricao.AcceptsTab = true;
-            this.txtBoxDescricao.Enabled = false;
             this.txtBoxDescricao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxDescricao.Location = new System.Drawing.Point(66, 170);
             this.txtBoxDescricao.Multiline = true;
             this.txtBoxDescricao.Name = "txtBoxDescricao";
+            this.txtBoxDescricao.ReadOnly = true;
+            this.txtBoxDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxDescricao.Size = new System.Drawing.Size(590, 256);
-            this.txtBoxDescricao.TabIndex = 1;
+            this.txtBoxDescricao.TabIndex = 5;
             this.txtBoxDescricao.TextChanged += new System.EventHandler(this.txtBoxDescricao_TextChanged);
             // 
             // label2
@@ -76,13 +77,14 @@ namespace VRControleSolucao.UI
             // 
             // txtBoxNome
             // 
-            this.txtBoxNome.Enabled = false;
             this.txtBoxNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxNome.Location = new System.Drawing.Point(125, 78);
             this.txtBoxNome.Name = "txtBoxNome";
+            this.txtBoxNome.ReadOnly = true;
             this.txtBoxNome.Size = new System.Drawing.Size(382, 29);
-            this.txtBoxNome.TabIndex = 3;
+            this.txtBoxNome.TabIndex = 4;
             this.txtBoxNome.TextChanged += new System.EventHandler(this.txtBoxNome_TextChanged);
+            this.txtBoxNome.Enter += new System.EventHandler(this.txtBoxNome_Enter);
             // 
             // btnSalvar
             // 
@@ -91,7 +93,7 @@ namespace VRControleSolucao.UI
             this.btnSalvar.Location = new System.Drawing.Point(294, 451);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(137, 38);
-            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -103,7 +105,7 @@ namespace VRControleSolucao.UI
             this.btnFechar.Location = new System.Drawing.Point(525, 451);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(131, 38);
-            this.btnFechar.TabIndex = 5;
+            this.btnFechar.TabIndex = 3;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
@@ -114,7 +116,7 @@ namespace VRControleSolucao.UI
             this.button1.Location = new System.Drawing.Point(66, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 38);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Habilitar edição";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -136,7 +138,7 @@ namespace VRControleSolucao.UI
             this.tbCodigo.Location = new System.Drawing.Point(603, 78);
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(53, 29);
-            this.tbCodigo.TabIndex = 8;
+            this.tbCodigo.TabIndex = 0;
             this.tbCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4

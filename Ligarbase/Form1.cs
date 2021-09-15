@@ -27,23 +27,29 @@ namespace Ligarbase
 
             try
             {
-                conec = new SqlConnection(Common.get());
+                conec = new SqlConnection(Common.get()[1]);
                 SqlCommand cmd = new SqlCommand("",conec);
 
                 //define instrução SQL - nome de tabela/armazenamento/etc
-                cmd.CommandText = @"CREATE DATABASE vrsolucoes ON" +
-                    "(FILENAME = 'C:\\VRControleSolucoes\\vrsolucoes.mdf')" +
-                    "(FILENAME = 'C:\\VRControleSolucoes\\vrcoluoes_log.ldf')" +
-                    "FOR ATTACH";
+                cmd.CommandText = @"CREATE DATABASE vrsolucoes ON " +
+                @"(FILENAME = N'C:\VRControleSolucao\vrsolucoes.mdf')," +
+                @"(FILENAME = N'C:\\VRControleSolucao\vrsolucoes_log.ldf')" +
+                "FOR ATTACH";
 
                 conec.Open();
-               
-                lbStatus.Text = "Sucesso";
+                
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();//ausencia do using
+
+                lbStatus.Text = "Iniciado com sucesso";
 
             }
-            catch
+            catch(Exception ex)
             {
-                lbStatus.Text = "Erro";
+                lbStatus.Text = "Erro ";
+                MessageBox.Show("Erro  " + ex.Message.ToString());
+                conec.Dispose();
             }
         }
     }

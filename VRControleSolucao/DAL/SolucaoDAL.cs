@@ -14,7 +14,7 @@ namespace DAL
     {
         public static void add(Solucao solucao)
         {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
 
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -43,7 +43,7 @@ namespace DAL
         }
         public static bool findSolucao(int codigo)
         {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
             bool testeFind = false;
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -82,7 +82,7 @@ namespace DAL
             return testeFind;
         }
         public static void update(Solucao solucao) {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
 
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -105,7 +105,7 @@ namespace DAL
         }
         public static int getLast()
         {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
             int last;
 
             using (SqlConnection conec = new SqlConnection(textConnection))
@@ -133,7 +133,7 @@ namespace DAL
         }
         public static DataTable getData()
         {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
    
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
@@ -162,7 +162,7 @@ namespace DAL
         }
         public static DataTable consultNome(string valor)
         {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
                 try
@@ -194,7 +194,7 @@ namespace DAL
         }
         public static DataTable consultCodigo(int valor)
         {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
             using (SqlConnection conec = new SqlConnection(textConnection))
             {
                 try
@@ -226,7 +226,7 @@ namespace DAL
         }
         public static Solucao get(int codigo)
         {
-            string textConnection = Common.get();
+            string textConnection = Common.get()[0];
 
             Solucao sol = new Solucao(codigo);
             SqlDataReader dr = null;

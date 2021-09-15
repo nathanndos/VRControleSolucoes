@@ -43,6 +43,7 @@ namespace VRControleSolucao.UI
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbErro = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +64,9 @@ namespace VRControleSolucao.UI
             this.tbPesquisa.Name = "tbPesquisa";
             this.tbPesquisa.Size = new System.Drawing.Size(222, 29);
             this.tbPesquisa.TabIndex = 1;
+            this.tbPesquisa.TextChanged += new System.EventHandler(this.tbPesquisa_TextChanged);
+            this.tbPesquisa.Enter += new System.EventHandler(this.tbPesquisa_Enter);
+            this.tbPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPesquisa_KeyDown);
             // 
             // rbNome
             // 
@@ -127,7 +131,7 @@ namespace VRControleSolucao.UI
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(284, 406);
+            this.button3.Location = new System.Drawing.Point(284, 397);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 38);
             this.button3.TabIndex = 5;
@@ -141,19 +145,21 @@ namespace VRControleSolucao.UI
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(82, 212);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(547, 160);
-            this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(82, 406);
+            this.button4.Location = new System.Drawing.Point(82, 397);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 38);
-            this.button4.TabIndex = 4;
+            this.button4.TabIndex = 5;
             this.button4.Text = "Atualizar";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -162,7 +168,7 @@ namespace VRControleSolucao.UI
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(500, 406);
+            this.button5.Location = new System.Drawing.Point(500, 397);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(129, 38);
             this.button5.TabIndex = 6;
@@ -184,27 +190,40 @@ namespace VRControleSolucao.UI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(535, 471);
+            this.label4.Location = new System.Drawing.Point(546, 471);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 12);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Densenvolvido por: Nathan Silva";
+            this.label4.Size = new System.Drawing.Size(136, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Desenvolvido por: Nathan Silva";
+            this.label4.UseCompatibleTextRendering = true;
             // 
             // lbErro
             // 
             this.lbErro.AutoSize = true;
             this.lbErro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbErro.ForeColor = System.Drawing.Color.Red;
-            this.lbErro.Location = new System.Drawing.Point(12, 464);
+            this.lbErro.Location = new System.Drawing.Point(12, 452);
             this.lbErro.Name = "lbErro";
-            this.lbErro.Size = new System.Drawing.Size(0, 19);
+            this.lbErro.Size = new System.Drawing.Size(39, 19);
             this.lbErro.TabIndex = 23;
+            this.lbErro.Text = "teste";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(12, 471);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 12);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Versão: 1.1 [Sakura]";
             // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 492);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lbErro);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -221,7 +240,7 @@ namespace VRControleSolucao.UI
             this.Controls.Add(this.label1);
             this.Name = "PrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VRControleSoluções";
+            this.Text = "VRControleSoluções ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -244,5 +263,6 @@ namespace VRControleSolucao.UI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbErro;
+        private System.Windows.Forms.Label label5;
     }
 }

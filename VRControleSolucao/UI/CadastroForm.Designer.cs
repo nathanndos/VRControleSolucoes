@@ -53,9 +53,9 @@ namespace UI
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNome.Location = new System.Drawing.Point(212, 72);
+            this.txtNome.Location = new System.Drawing.Point(231, 72);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(416, 29);
+            this.txtNome.Size = new System.Drawing.Size(397, 29);
             this.txtNome.TabIndex = 1;
             // 
             // label2
@@ -106,6 +106,7 @@ namespace UI
             this.txtDescricao.Location = new System.Drawing.Point(62, 171);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtDescricao.Size = new System.Drawing.Size(566, 219);
             this.txtDescricao.TabIndex = 2;
             this.txtDescricao.TextChanged += new System.EventHandler(this.textBox1_TextChanged);

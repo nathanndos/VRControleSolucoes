@@ -70,8 +70,8 @@ namespace VRControleSolucao.UI
         }
         public void blockInput()
         {
-            txtBoxNome.Enabled = !txtBoxNome.Enabled;
-            txtBoxDescricao.Enabled = !txtBoxDescricao.Enabled;
+            txtBoxNome.ReadOnly= !txtBoxNome.ReadOnly;
+            txtBoxDescricao.ReadOnly = !txtBoxDescricao.ReadOnly;
             btnSalvar.Enabled = !btnSalvar.Enabled;
 
             if (btnSalvar.Enabled == true)
@@ -83,6 +83,11 @@ namespace VRControleSolucao.UI
                 button1.Text = "Habilitar edição";
 
             }
+        }
+
+        private void txtBoxNome_Enter(object sender, EventArgs e)
+        {
+      
         }
     }
 }
