@@ -1,3 +1,7 @@
+# Instalação .NET Framework
+1) Acesso o link https://dotnet.microsoft.com/download/dotnet-framework/net472
+2) Faça download do .Net RUNTIME
+
 # Instalação do SQL EXPRESS
 
 Para colocar a aplicação para produção é simples, baixa seguir os passos abaixo.
