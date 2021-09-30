@@ -62,7 +62,7 @@ namespace VRControleSolucao.UI
             this.txtBoxDescricao.ReadOnly = true;
             this.txtBoxDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxDescricao.Size = new System.Drawing.Size(590, 256);
-            this.txtBoxDescricao.TabIndex = 5;
+            this.txtBoxDescricao.TabIndex = 1;
             this.txtBoxDescricao.TextChanged += new System.EventHandler(this.txtBoxDescricao_TextChanged);
             // 
             // label2
@@ -116,7 +116,7 @@ namespace VRControleSolucao.UI
             this.button1.Location = new System.Drawing.Point(66, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 38);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Habilitar edição";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

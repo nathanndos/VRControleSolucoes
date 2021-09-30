@@ -75,10 +75,10 @@ namespace VRControleSolucao.UI
             this.rbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rbNome.Location = new System.Drawing.Point(164, 111);
             this.rbNome.Name = "rbNome";
-            this.rbNome.Size = new System.Drawing.Size(71, 25);
+            this.rbNome.Size = new System.Drawing.Size(92, 25);
             this.rbNome.TabIndex = 7;
             this.rbNome.TabStop = true;
-            this.rbNome.Text = "Nome";
+            this.rbNome.Text = "Nome F1";
             this.rbNome.UseVisualStyleBackColor = true;
             this.rbNome.CheckedChanged += new System.EventHandler(this.rbNome_CheckedChanged);
             // 
@@ -86,12 +86,12 @@ namespace VRControleSolucao.UI
             // 
             this.rbCodigo.AutoSize = true;
             this.rbCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbCodigo.Location = new System.Drawing.Point(241, 111);
+            this.rbCodigo.Location = new System.Drawing.Point(262, 111);
             this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(78, 25);
+            this.rbCodigo.Size = new System.Drawing.Size(99, 25);
             this.rbCodigo.TabIndex = 8;
             this.rbCodigo.TabStop = true;
-            this.rbCodigo.Text = "Código";
+            this.rbCodigo.Text = "Código F2";
             this.rbCodigo.UseVisualStyleBackColor = true;
             this.rbCodigo.CheckedChanged += new System.EventHandler(this.rbCodigo_CheckedChanged);
             // 
@@ -160,7 +160,7 @@ namespace VRControleSolucao.UI
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 38);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Atualizar";
+            this.button4.Text = "Atualizar F5";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -216,7 +216,7 @@ namespace VRControleSolucao.UI
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 12);
             this.label5.TabIndex = 24;
-            this.label5.Text = "Versão: 1.1 [Sakura]";
+            this.label5.Text = "Versão: 1.2 [Sakura]";
             // 
             // PrincipalForm
             // 

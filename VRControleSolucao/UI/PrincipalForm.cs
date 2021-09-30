@@ -167,7 +167,11 @@ namespace VRControleSolucao.UI
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbPesquisa.Focus();
+            var linha = dataGridView1.Rows[e.RowIndex]; 
+        
+            Solucao sl = SolucaoBLL.get((int)linha.Cells[0].Value);
+            DescricaoForm descricaoForm = new DescricaoForm(sl._idSolucao, sl.Nome, sl.Descricao);
+            descricaoForm.Show();
         }
     }
 }

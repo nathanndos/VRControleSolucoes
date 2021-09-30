@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <Compile Remove="BaseDeDados\**" />
+    <EmbeddedResource Remove="BaseDeDados\**" />
+    <None Remove="BaseDeDados\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BaseDeDados\" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
 </Project>
