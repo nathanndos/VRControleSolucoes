@@ -33,17 +33,25 @@ Obs.: Garanta que o caminho da pasta descompactada seja "C:\VRControleSolucao", 
 
 
 # Funcionamento do programa
-1) Na tela principal no campo "pesquisa"
-	1) Quando estiver com a opção "nome" estiver marcada for pressionada a tecla Enter, será utilizada a função do botao "buscar", ou seja ele irá filtrar as informações 	referentes aos nomes das soluções
+
+Tela principal 
+
+1) Comportamento do campo "pesquisa"
+	1) Quando estiver com a opção "nome" estiver marcada for pressionada a tecla Enter, será utilizada a função do botao "buscar", ou seja ele irá filtrar as informações 	referentes aos nomes das soluções. A busca das informações são feitas em qualquer localização da palavra no "nome"
 	2) Quando estiver com 'codigo' marcado, o botao 'visualizar' será habilitado, ao apertar Enter será utilizada a função de visualização, abrindo a janela com as informações do codigo principal digitado. Caso seja selecionado o botão de "buscar", ele irá filtrar a busca pelo código exato da pesquisa
-- Os atalhos só funcionam com o foco no campo da pesquisa
+	3) Os atalhos só funcionam quando esteve quando estiver em foco
+2) Botão "Atualizar"
+	1) Após novos dados serem inseridos ou editados, é necessário atualizar o grid para que as modificações sejam buscadas
+3) Botão "Nova solução"
+	1) Abre uma nova janela para realizar um novo registro
+4) Botão "Fechar" 
+	1) Fecha o programa
+	
+Cadastro de Soluções
 
-NOVA SOLUÇÂO
-Quando clicar vai abrir uma nova janela
-- Nome do problema. Poderia ser por exemplo "erro 451 da nfce
-- Na descrição voce vai colocar o passo a passo de como arrumou ou o comando
-- Ai tem os botoes de ação em baixo, o proprio nome ja deixa claro oq é
-
-ATUALIZAR
-Quando voltar, pra aparecer na pesquisa é só apertar em atualizar
-Pra abrir as informações que estão no grid é só dar dois cliques nas palavras ou codigos
+Essa janela é aberta clicando em "nova solução" na tela principal
+1) Campo "Nome"
+	1) As informações inseridas serão utilizadas como meio de busca na janela principal. 
+2) Campo "Descrição"
+	1) As informações inseridas neste campo podem ser identadas e inseridas da forma que achar mais interessante. Obs.: Campo tem limite de 1500 caracteres
+Sugestão de como utilizar -> Nome: Problema de impressora /  Descrição: Verificar drive, atualizações do windows, verificar cabo da impressora[...]
