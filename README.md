@@ -32,4 +32,18 @@ Obs.: Garanta que o caminho da pasta descompactada seja "C:\VRControleSolucao", 
 3) Caso, o feedback seja positivo, não será mais necessário utilizar o "LigarBase novamente. Sendo assim é só executar o "VRControleSolucao" e começar a usar normalmente
 
 
+#Funcionamento do programa
+1) Na tela principal no campo "pesquisa"
+	1) Quando estiver com a opção "nome" estiver marcada for pressionada a tecla Enter, será utilizada a função do botao "buscar", ou seja ele irá filtrar as informações 	referentes aos nomes das soluções
+	2) Quando estiver com 'codigo' marcado, o botao 'visualizar' será habilitado, ao apertar Enter será utilizada a função de visualização, abrindo a janela com as informações do codigo principal digitado. Caso seja selecionado o botão de "buscar", ele irá filtrar a busca pelo código exato da pesquisa
+- Os atalhos só funcionam com o foco no campo da pesquisa
 
+NOVA SOLUÇÂO
+Quando clicar vai abrir uma nova janela
+- Nome do problema. Poderia ser por exemplo "erro 451 da nfce
+- Na descrição voce vai colocar o passo a passo de como arrumou ou o comando
+- Ai tem os botoes de ação em baixo, o proprio nome ja deixa claro oq é
+
+ATUALIZAR
+Quando voltar, pra aparecer na pesquisa é só apertar em atualizar
+Pra abrir as informações que estão no grid é só dar dois cliques nas palavras ou codigos
